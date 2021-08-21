@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cars;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,11 +25,17 @@ class HomeController extends Controller
      */
     protected function index()
     {
-        return view('home');
+        $models = Cars::all()->toJson();
+        $segmentos = Cars::all()->unique('segment');
+        $models = json_decode($models);
+        return view('home', compact('models', 'segmentos'));
     }
 
-    protected function detail($id)
+    protected function filter($segmento)
     {
-        return view('detail');
+        $models = Cars::where('segment', '=', $segmento)->get()->toJson();
+        $models = json_decode($models);
+        $segmentos = Cars::all()->unique('segment');
+        return view('home', compact('models', 'segmentos'));
     }
 }

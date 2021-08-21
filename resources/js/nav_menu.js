@@ -1,5 +1,3 @@
-console.log("hola");
-
 var btnOpen = document.querySelector(".btn-menu");
 var btnClose = document.querySelector(".btn-menu-close");
 var menuList = document.querySelector(".menu");

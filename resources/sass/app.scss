@@ -3,6 +3,7 @@
 // Variables
 @import "variables";
 @import "navbar";
+@import "filter";
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
@@ -19,15 +20,16 @@ body {
     padding: 0;
     font-family: "Space Grotesk", sans-serif;
     color: black;
-    background: white;
+    background-color: white;
 }
 
 button {
     cursor: pointer;
     font-family: "Space Grotesk", sans-serif;
-}
-button:disabled {
-    cursor: auto;
+
+    &:disabled {
+        cursor: auto;
+    }
 }
 
 h1,
@@ -41,6 +43,16 @@ h6 {
 
 p {
     margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #000000;
 }
 
 ul,
@@ -62,9 +74,73 @@ u {
 picture {
     line-height: 0;
     display: block;
+
+    img {
+        width: 100%;
+    }
 }
-picture img {
-    width: 100%;
+
+.Text-Style-6 {
+    font-family: Montserrat;
+    font-size: 50px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: -1px;
+    color: #373737;
+}
+.Text-Style-2 {
+    font-family: Montserrat;
+    font-size: 35px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.26;
+    letter-spacing: -0.7px;
+    color: #191919;
+}
+.Text-Style-4 {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #eb0a1e;
+}
+.Text-Style-5 {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #191919;
+}
+.Text-Style {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.28px;
+    text-align: center;
+    color: #191919;
+}
+.Text-Style-3 {
+    font-family: ToyotaType;
+    font-size: 13px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.77;
+    letter-spacing: 0.07px;
+    text-align: center;
+    color: white;
 }
 
 .footer-container {
@@ -73,18 +149,14 @@ picture img {
     margin-top: 100px;
 }
 
-h1.page-title {
-    margin-bottom: 62px;
-    font-weight: bold;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.14;
-    letter-spacing: 0.5px;
-    width: 100%;
+.home-title {
+    padding: 50px 0;
 }
+/* 
+.page-title {
+} */
 
-h1.page-title-detail {
+.page-title-detail {
     margin-bottom: 62px;
     font-weight: bold;
     font-weight: bold;
@@ -141,15 +213,14 @@ h1.page-title-detail {
 }
 .cards {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-flow: row wrap;
 }
 
 .card {
     margin-top: 26px;
     width: 250px;
     height: 300px;
-    border-radius: 10px;
+    border: none;
 }
 
 .btn-ego {
@@ -171,16 +242,35 @@ h1.page-title-detail {
     color: #191919;
 }
 
-.dropdown-menu {
-    border-radius: 0 0 10px 10px;
-    border: none;
-    box-shadow: 2px 8px 20px 0 rgba(0, 0, 0, 0.15);
-    width: 170px;
-    padding: 0px;
-    margin-top: 12px;
+.dropdown {
+    position: relative;
+    top: 102px;
+    left: 0px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
-    .dropdown-item {
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        border-radius: 0 0 10px 10px;
+        border: none;
+        box-shadow: 2px 8px 20px 0 rgba(0, 0, 0, 0.15);
+        width: 170px;
+        padding: 0px;
+        margin-top: 12px;
+        opacity: 0;
+    }
+
+    &__menu.active {
+        opacity: 1;
+    }
+
+    &__item {
         font-family: "Montserrat";
+        width: 100%;
         height: 37px;
         padding: 0 0 0 16px;
         font-size: 10px;
@@ -190,19 +280,9 @@ h1.page-title-detail {
         line-height: 3.5;
         letter-spacing: -0.1px;
         color: #191919;
+        background: white;
+        border: none;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        &:last-child {
-            border: none;
-            border-radius: 0 0 10px 10px;
-        }
-
-        &:active {
-            @include dropdown-active;
-        }
-    }
-
-    .dropdown-item.active {
-        @include dropdown-active;
     }
 }
 

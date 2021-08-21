@@ -81,49 +81,44 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/nav_menu.js":
-/*!**********************************!*\
-  !*** ./resources/js/nav_menu.js ***!
-  \**********************************/
+/***/ "./resources/js/filter.js":
+/*!********************************!*\
+  !*** ./resources/js/filter.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var btnOpen = document.querySelector(".btn-menu");
-var btnClose = document.querySelector(".btn-menu-close");
-var menuList = document.querySelector(".menu");
+var dropdownMenu = document.querySelector("#dropdownMenu");
+var menu = document.querySelector(".dropdown__menu");
+console.log(dropdownMenu, menu);
 
-btnOpen.onclick = function () {
+dropdownMenu.onclick = function () {
   activateShow();
 };
 
-btnClose.onclick = function (e) {
-  e.preventDefault();
-  menuList.className = "menu";
-};
-
 function activateShow() {
-  if (menuList.className === "menu") {
-    menuList.className = "menu show";
+  if (menu.className === "dropdown__menu") {
+    menu.className = "dropdown__menu active";
   } else {
-    menuList.className = "menu";
+    menu.className = "dropdown__menu";
   }
 }
 
 /***/ }),
 
-/***/ 1:
-/*!****************************************!*\
-  !*** multi ./resources/js/nav_menu.js ***!
-  \****************************************/
+/***/ 2:
+/*!**************************************!*\
+  !*** multi ./resources/js/filter.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\AGENCIA EGO\sullair58\resources\js\nav_menu.js */"./resources/js/nav_menu.js");
+module.exports = __webpack_require__(/*! C:\Users\AGENCIA EGO\sullair58\resources\js\filter.js */"./resources/js/filter.js");
 
 
 /***/ })

@@ -12,6 +12,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/nav_menu.js') }}" defer></script>
+    <script src="{{ asset('js/filter.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -31,7 +32,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li>
-                            <a href="/home" class="{{  request()->routeIs('home') ? 'active' : '' }}">
+                            <a href="/home" class="{{  request()->routeIs('home' || 'filter') ? 'active' : '' }}">
                                 <span>Modelos</span>
                             </a>
                         </li>
@@ -42,7 +43,7 @@
                         </li>
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
+                   {{--  <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
@@ -73,15 +74,11 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
-                    <ul>
-                        <li >
-                            <a href="#" class="btn-menu">
-                                <span>Menú</span>
-                                <img src="/images/gray.svg" alt="Menú - Icono" />
-                            </a>
-                        </li>
-                    </ul>
+                    </ul> --}}
+                    <button class="btn-menu">
+                            <span>Menú</span>
+                            <img src="/images/gray.svg" alt="Menú - Icono" />
+                    </button>
                 </div>
             </div>
         </nav>
@@ -102,7 +99,6 @@
                     <li><a href="/">Reviews y Comunidad</a></li>
                 </ul>
             </div>
-
             <ul>
                 <li>
                     <a href="/">
@@ -110,7 +106,6 @@
                     </a>
                 </li>
             </ul>
-
             <div class='menu-tab'>
                 <ul>
                     <li><a href="/">Toyota Mobility Service</a></li>
@@ -118,7 +113,6 @@
                     <li><a href="/">Toyota Híbridos</a></li>
                 </ul>
             </div>
-
             <ul>
                 <li>
                     <a href="/">
@@ -126,7 +120,6 @@
                     </a>
                 </li>
             </ul>
-
             <div class='menu-tab'>
                 <ul>
                     <li><a href="/">Concesionarios</a></li>

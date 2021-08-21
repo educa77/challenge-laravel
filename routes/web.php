@@ -19,4 +19,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home/{id}', 'HomeController@detail')->name('detail');
+Route::get('/home/{segmentos}', 'HomeController@filter')->name('filter');

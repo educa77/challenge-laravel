@@ -134,14 +134,12 @@ $dark: #373737;
     @media (max-width: 800px) {
         width: 100%;
     }
-
     top: 70px;
     max-height: 100vh;
-    overflow-y: auto;
+    overflow-y: hidden;
     position: fixed;
     z-index: -1000;
     opacity: 0;
-    height: 100vh;
     right: 0;
     padding-top: 18px;
     background-color: #ffffff;

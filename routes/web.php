@@ -19,4 +19,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home/{segmentos}', 'HomeController@filter')->name('filter');
+Route::get('/detail/{id}', 'HomeController@detail')->name('detail');
+Route::get('/home/{segmento}', 'HomeController@filter')->name('filter');

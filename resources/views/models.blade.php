@@ -6,7 +6,7 @@
       <div class="card-body text-center">
         <h5 class="card-title text-center">{{ $model->name }}</h5>
         <span>{{ $model->year }} | ${{ $model->price }} </span>
-        <a href="/home/1" class="btn btn-dark btn-ego">Ver Modelo</a>
+        <a href="/detail/{{ $model->id }}" class="btn btn-dark btn-ego">Ver Modelo</a>
       </div>
     </div>
     @endforeach

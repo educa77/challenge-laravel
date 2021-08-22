@@ -21,6 +21,17 @@ body {
     font-family: "Space Grotesk", sans-serif;
     color: black;
     background-color: white;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #ff0000;
 }
 
 button {
@@ -284,10 +295,154 @@ picture {
         border: none;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
+
+    &__item.active {
+        background-color: #f7f7f7;
+    }
 }
 
 @media (max-width: 766px) {
     .cards {
         justify-content: center;
+    }
+}
+
+.img-main {
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+
+@mixin font-ego {
+    font-stretch: normal;
+    font-style: normal;
+    color: #373737;
+    font-family: "Montserrat";
+}
+
+.model-title {
+    font-size: 20px;
+    font-weight: 600;
+    @include font-ego;
+    line-height: 1.35;
+    letter-spacing: normal;
+    margin-bottom: 8px;
+}
+
+.main-title {
+    font-size: 50px;
+    font-weight: 600;
+    @include font-ego;
+    line-height: 1.14;
+    letter-spacing: -1px;
+    margin-bottom: 37px;
+}
+
+.short-description {
+    max-width: 385px;
+    font-size: 16px;
+    font-weight: normal;
+    @include font-ego;
+    line-height: 1.69;
+    letter-spacing: -0.1px;
+    margin-bottom: 87px;
+}
+
+.detail-container {
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__text {
+        padding-top: 50px;
+    }
+}
+
+.details-content {
+    background-color: #f7f7f7;
+    padding-top: 43px;
+    padding-bottom: 50px;
+    width: 100%;
+    overflow-x: scroll;
+
+    &__card {
+        padding: 15px;
+    }
+}
+
+.details-content::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.detail-slide {
+    display: -webkit-box;
+}
+
+.pagination-item {
+    width: 8px;
+    height: 8px;
+    opacity: 0.5;
+    background-color: #c5c5c5;
+    opacity: 0.5;
+    border-radius: 4px;
+    margin-left: 25px;
+    transition: all ease-out 0.4s;
+}
+
+.pagination-item.active {
+    width: 39px;
+    background-color: #4a4a4a;
+}
+
+.card-title {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: -0.4px;
+    color: #373737;
+    margin-top: 20px;
+    margin-bottom: 18px;
+}
+
+.card-carousel {
+    padding: 0px;
+    width: 270px;
+    margin-left: 11px;
+    margin-right: 11px;
+    @media (max-width: 900px) {
+        width: 95%;
+    }
+}
+
+.arrow-container {
+    position: absolute;
+    width: 98%;
+    overflow: hidden;
+    display: flex;
+    left: 1%;
+    top: 650px;
+
+    &__right {
+        position: relative;
+        left: 94.5%;
+    }
+    &__left {
+        position: relative;
+        left: 2.5%;
+    }
+
+    .arrow-img {
+        position: inline-block;
+        margin-left: auto;
+        width: 20px;
+        height: 42px;
+        opacity: 0.75;
     }
 }

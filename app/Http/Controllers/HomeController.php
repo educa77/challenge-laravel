@@ -23,19 +23,44 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    protected function index()
+    protected function index(Request $request)
     {
-        $models = Cars::all()->toJson();
-        $segmentos = Cars::all()->unique('segment');
-        $models = json_decode($models);
-        return view('home', compact('models', 'segmentos'));
+        if (count($request->all()) > 0) {
+            $field = $request[0];
+            $direction = $request[1];
+            $models = Cars::orderBy($field, $direction)->get()->toJson();
+            $segmentos = Cars::all()->unique('segment');
+            $models = json_decode($models);
+            return view('home', compact('models', 'segmentos'));
+        } else {
+            $models = Cars::all()->toJson();
+            $segmentos = Cars::all()->unique('segment');
+            $models = json_decode($models);
+            return view('home', compact('models', 'segmentos'));
+        }
     }
 
-    protected function filter($segmento)
+    protected function filter($segmento,  Request $request)
     {
-        $models = Cars::where('segment', '=', $segmento)->get()->toJson();
-        $models = json_decode($models);
-        $segmentos = Cars::all()->unique('segment');
-        return view('home', compact('models', 'segmentos'));
+        if (count($request->all()) > 0) {
+            $field = $request[0];
+            $direction = $request[1];
+            $models = Cars::orderBy($field, $direction)->where('segment', '=', $segmento)->get()->toJson();
+            $segmentos = Cars::all()->unique('segment');
+            $models = json_decode($models);
+            $segmento =  $request->segment(2);
+            return view('home', compact('models', 'segmentos', 'segmento'));
+        } else {
+            $models = Cars::where('segment', '=', $segmento)->get()->toJson();
+            $models = json_decode($models);
+            $segmentos = Cars::all()->unique('segment');
+            $segmento =  $request->segment(2);
+            return view('home', compact('models', 'segmentos', 'segmento'));
+        }
+    }
+
+    protected function detail($id)
+    {
+        return view(('detail'));
     }
 }

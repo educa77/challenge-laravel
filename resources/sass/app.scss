@@ -354,6 +354,7 @@ picture {
     &__header {
         display: flex;
         flex-direction: row;
+        padding-bottom: 40px;
     }
 
     &__text {
@@ -444,5 +445,65 @@ picture {
         width: 20px;
         height: 42px;
         opacity: 0.75;
+    }
+}
+
+@mixin font-ego {
+    font-family: "Montserrat";
+    font-stretch: normal;
+    font-style: normal;
+    color: #373737;
+}
+
+.title {
+    @include font-ego;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.4px;
+    margin-bottom: 13px;
+}
+
+.description {
+    @include font-ego;
+    font-size: 16px;
+    line-height: 1.69;
+    letter-spacing: -0.1px;
+    margin-bottom: 0;
+}
+.first {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+
+    &-container {
+        flex: 0.5;
+        display: flex;
+        justify-content: center;
+
+        &__text {
+            padding: 50px;
+            max-width: 385px;
+        }
+    }
+    &__image {
+        flex: 0.5;
+    }
+
+    @media (max-width: 900px) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+
+.second {
+    display: flex;
+    align-items: center;
+    @media (max-width: 900px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

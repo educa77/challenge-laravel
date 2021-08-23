@@ -85,6 +85,31 @@
                 </div>    
             </div>
         </div>
-    
+        
 </div>
+<div class='container'>
+            <div class='first'>
+                <div class="first-container">
+                    <div class="first-container__text">
+                            <h3 class='title'>Título de 20 px</h3>
+                            <p class='description'>Texto lorem ipsum dolor sit amet orem ipsum dolor sit amet. lorem ipsum dolor sit amet orem ipsum dolor sit amet lorem ipsum dolor sit amet orem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+                <div class="first__image">
+                    <img src="/uploads/hilux_bloqueo_83189897d0.jpeg" class="img-fluid rounded" alt='Imagen de '/>
+                </div>
+            </div>
+
+            <div class='first'>
+                <div class="first__image">
+                    <img src="/uploads/hilux_asistente_1beac6240e.jpeg" class="img-fluid rounded" alt='Imagen de ' />
+                </div> 
+                <div class="first-container">
+                    <div class="first-container__text">
+                        <h3 class='title'>Título de 20 px</h3>
+                        <p class='description'>Texto lorem ipsum dolor sit amet orem ipsum dolor sit amet. lorem ipsum dolor sit amet orem ipsum dolor sit amet lorem ipsum dolor sit amet orem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+            </div>    
+        </div>
 @endsection

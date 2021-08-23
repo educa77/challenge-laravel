@@ -49,13 +49,13 @@
                     <a class="dropdown__item" href="{{ url("home?0=price&1=asc") }}">
                         De <b>menor</b> a <b>mayor</b> precio
                     </a>
-                    <a class="dropdown__item" href="{{ request()->fullUrlWithQuery(['price', 'desc']) }}">
+                    <a class="dropdown__item" href="{{ url("home?0=price&1=desc") }}">
                         De <b>mayor</b> a <b>menor</b> precio
                     </a>
-                    <a class="dropdown__item" href="{{ request()->fullUrlWithQuery(['year', 'desc']) }}">
+                    <a class="dropdown__item" href="{{ url("home?0=year&1=desc") }}">
                         Más <b>nuevos</b> primero
                     </a>
-                    <a class="dropdown__item" href="{{ request()->fullUrlWithQuery(['year', 'asc']) }}">
+                    <a class="dropdown__item" href="{{ url("home?0=year&1=asc") }}">
                         Más <b>viejos</b> primero
                     </a>
                 </div>

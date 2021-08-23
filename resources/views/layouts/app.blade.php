@@ -32,7 +32,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li>
-                            <a href="/home" class="{{  request()->is('home') ? 'active' : '' }}">
+                            <a href="/home" class="{{  request()->is('home') ? 'active' : request()->routeIs('filter') ? 'active' : '' }}">
                                 <span>Modelos</span>
                             </a>
                         </li>

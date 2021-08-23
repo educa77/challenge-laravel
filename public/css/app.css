@@ -11623,7 +11623,6 @@ picture img {
 }
 
 .short-description {
-  max-width: 385px;
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
@@ -11646,8 +11645,18 @@ picture img {
   padding-bottom: 40px;
 }
 
+.detail-container__image {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+}
+
 .detail-container__text {
-  padding-top: 50px;
+  flex: 0.5;
+}
+
+.detail-container__text__container {
+  padding: 100px 50px 50px;
 }
 
 .details-content {
@@ -11719,7 +11728,8 @@ picture img {
   overflow: hidden;
   display: flex;
   left: 1%;
-  top: 650px;
+  top: 820px;
+  cursor: pointer;
 }
 
 .arrow-container__right {
@@ -11768,6 +11778,7 @@ picture img {
   align-items: center;
   justify-content: center;
   padding-top: 60px;
+  background: white;
 }
 
 .first-container {

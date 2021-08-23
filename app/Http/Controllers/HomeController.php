@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cars;
+use App\Detail;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -61,6 +62,10 @@ class HomeController extends Controller
 
     protected function detail($id)
     {
-        return view(('detail'));
+        $details = Detail::where('cars_id', $id)->get()->toJson();
+        $details = json_decode($details);
+        $carcomplete = Cars::find($id)->load(['detail']);
+        dd($carcomplete);
+        return view('detail', compact('details'));
     }
 }

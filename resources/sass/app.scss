@@ -338,7 +338,6 @@ picture {
 }
 
 .short-description {
-    max-width: 385px;
     font-size: 16px;
     font-weight: normal;
     @include font-ego;
@@ -356,9 +355,18 @@ picture {
         flex-direction: row;
         padding-bottom: 40px;
     }
+    &__image {
+        flex: 0.5;
+        display: flex;
+        justify-content: center;
+    }
 
     &__text {
-        padding-top: 50px;
+        flex: 0.5;
+
+        &__container {
+            padding: 100px 50px 50px;
+        }
     }
 }
 
@@ -428,7 +436,8 @@ picture {
     overflow: hidden;
     display: flex;
     left: 1%;
-    top: 650px;
+    top: 820px;
+    cursor: pointer;
 
     &__right {
         position: relative;
@@ -476,6 +485,7 @@ picture {
     align-items: center;
     justify-content: center;
     padding-top: 60px;
+    background: white;
 
     &-container {
         flex: 0.5;

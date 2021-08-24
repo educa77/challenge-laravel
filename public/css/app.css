@@ -286,9 +286,9 @@
 }
 
 .filter-badge-todos,
-.filter-badge-autos,
-.filter-badge-pickups,
-.filter-badge-suvs {
+.filter-badge-Autos,
+.filter-badge-Pickups,
+.filter-badge-SUVs {
   color: #373737;
   font-size: 14px;
   font-stretch: normal;
@@ -303,17 +303,17 @@
 }
 
 .filter-badge-todos:hover,
-.filter-badge-autos:hover,
-.filter-badge-pickups:hover,
-.filter-badge-suvs:hover {
+.filter-badge-Autos:hover,
+.filter-badge-Pickups:hover,
+.filter-badge-SUVs:hover {
   color: #373737;
   text-decoration: none;
 }
 
 .filter-badge-todos.active,
-.filter-badge-autos.active,
-.filter-badge-pickups.active,
-.filter-badge-suvs.active {
+.filter-badge-Autos.active,
+.filter-badge-Pickups.active,
+.filter-badge-SUVs.active {
   background-color: #f7f7f7;
 }
 

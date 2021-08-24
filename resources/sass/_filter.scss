@@ -86,9 +86,9 @@
 }
 
 .filter-badge-todos,
-.filter-badge-autos,
-.filter-badge-pickups,
-.filter-badge-suvs {
+.filter-badge-Autos,
+.filter-badge-Pickups,
+.filter-badge-SUVs {
     @include filter-item;
     margin-right: 15px;
     font-weight: normal;
@@ -104,9 +104,9 @@
 }
 
 .filter-badge-todos.active,
-.filter-badge-autos.active,
-.filter-badge-pickups.active,
-.filter-badge-suvs.active {
+.filter-badge-Autos.active,
+.filter-badge-Pickups.active,
+.filter-badge-SUVs.active {
     background-color: #f7f7f7;
 }
 

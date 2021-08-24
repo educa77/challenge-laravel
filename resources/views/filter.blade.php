@@ -4,33 +4,17 @@
             <span class='filter-title'>
                 Filtrar por
             </span>
-            <a  href="{{ route('home') }}" class='filter-badge-todos {{  request()->is('home') ? 'active' : '' }}'>
+            <a  href="{{ route('home') }}" class='filter-badge-todos {{  request()->routeIs('home') ? 'active' : '' }}'>
                 Todos
             </a>
-            <a key=1 href="{{ route('filter', 'Autos')}}" class='filter-badge-autos {{ (request()->is('home/Autos')) ? 'active' : '' }}'>
-                Autos
-            </a>
-            <a key=2 href="{{ route('filter', 'Pickups y Comerciales') }}"class='filter-badge-pickups {{ (request()->is('home/Pickups*')) ? 'active' : '' }}'>
-                Pickups y Comerciales
-            </a>
-            <a key=3 href="{{ route('filter', 'SUVs y Crossovers') }}"class='filter-badge-suvs {{ (request()->is('home/SUVs*')) ? 'active' : '' }} '>
-                SUVs y Crossovers
-            </a>
+            @if ($segmentos)
+                @foreach ($segmentos as $segment)
+                    <a href="{{ route( 'filter', $segment->name ) }}" class='filter-badge-{{ $segment->name}} {{ (request()->is("home/$segment->name")) ? 'active' : ''  }}'>
+                        {{ $segment->name }}
+                        </a>
+                @endforeach
+            @endif
         </div>
-{{--         <div>
-        <span class='filter-title'>
-            Filtrar por
-        </span>
-        <a  href="{{ route('home') }}" class='filter-badge-todos {{  request()->routeIs('home') ? 'active' : '' }}'>
-            Todos
-        </a>
-        @if (count($segmentos) == 3)
-            @foreach ($segmentos as $segmento)
-                <a href="{{ route( 'filter', $segmento->segment ) }}" class='filter-badge'>
-                {{ $segmento->segment }}
-            @endforeach
-        @endif
-        </div> --}}
             <div class="dropdown">
                 <div class="dropdown__order-image">
                     <a class="ml-auto" type="button" id="dropdownMenu">
@@ -38,7 +22,7 @@
                         <img 
                         src="{{ url('images/fill-1.svg') }}" 
                         alt="Flecha dropdown"
-                        class='Fill-1'{{-- + (state.dropdownToggled ? ' ' + s['active'] : '')}  --}}
+                        class='Fill-1'
                         >
                     </a>
                 </div>
